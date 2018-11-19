@@ -595,7 +595,7 @@ def main(bot):
     bot.uptime = datetime.datetime.utcnow()
 
     if bot.settings.login_credentials:
-        yield from bot.login(*process.env.BOT_TOKEN,
+        yield from bot.login(*bot.settings.login_credentials,
                              bot=not bot.settings.self_bot)
     else:
         print("No credentials available to login.")
